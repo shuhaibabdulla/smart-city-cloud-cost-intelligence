@@ -1,0 +1,155 @@
+ROLE: You are a senior full-stack web developer and data visualization engineer
+specializing in cloud infrastructure analytics, Smart City systems, and interactive
+dashboard design. // establishes expert context
+
+PROJECT: Build a fully functional, single-file HTML web application titled
+"Cloud Cost Intelligence — Smart City Infrastructure" for student
+Shuhaib Abdulla (Reg: 23BCAICD101). This project is an academic
+submission demonstrating Data Analysis, Cloud/DevOps workflows, and
+Python/Pandas-equivalent logic implemented natively in JavaScript.
+
+TECH STACK:
+  → Pure HTML5 + CSS3 + Vanilla JavaScript (no frameworks)
+  → Chart.js library for all data visualizations
+  → PapaParse library for CSV file parsing
+  → Deployed via Netlify (single static file)
+
+DESIGN SYSTEM:
+  → Dark theme: primary background #0a0a0a, card background #111111
+  → Accent color: #00ff88 (neon green) for highlights, borders, active states
+  → Monospace font (JetBrains Mono / Courier) for data values
+  → Responsive grid layout: 12-column CSS Grid system
+  → All cards: border-radius 10px, subtle border 1px solid #1e1e1e
+
+HEADER SECTION — requirements:
+  → Display logo icon + title "Cloud Cost Intelligence" top-left
+  → Subtitle: "Smart City Infrastructure · AI, Cloud Computing & DevOps"
+  → Top-right: student name "Shuhaib Abdulla" and "Reg: 23BCAICD101"
+
+DATA SOURCE SECTION — requirements:
+  → Display a "DATA SOURCE" panel showing: "Showing default Smart City billing
+      data (60 records). Upload your own CSV to analyze custom data."
+  → Include a working "Upload CSV" button that triggers file input, parses
+      the CSV using PapaParse, and dynamically re-renders ALL charts and
+      tables with the new data in real-time without page reload
+  → Include a "Format Guide" button that shows expected CSV column headers:
+      Invoice, Month, Service, Department, Hours, Cost
+
+SERVICE FILTER TABS — requirements:
+  → Render 5 clickable filter tabs: [All] [Compute] [Storage] [Networking]
+      [Database] [AI/ML Services]
+  → Active tab highlighted with #00ff88 accent background
+  → Clicking any tab filters ALL dashboard data, charts, and billing table
+      simultaneously in real-time
+
+KPI METRIC CARDS — requirements (4 cards, top row):
+  → Card 1 — "Total Cost": Sum all cost values, display as $XX,XXX with
+      invoice count below (e.g., "60 invoices")
+  → Card 2 — "Usage Hours": Sum all hours, display as XX,XXX with
+      label "Total hours"
+  → Card 3 — "Avg / Invoice": Calculate mean cost per invoice, display
+      as $XXX.XX
+  → Card 4 — "Top Department": Find highest-spending department via
+      groupBy aggregation, display name + total spend
+  → Each card has a unique colored icon and monospace number formatting
+
+CHART 1 — "Cost by Service Type" (Donut Chart):
+  → Chart.js doughnut chart, grouped by Service Type column
+  → 5 segments: Compute, Storage, Networking, Database, AI/ML Services
+  → Colors: green, blue, yellow, purple, orange respectively
+  → Interactive hover tooltips showing service name + cost + percentage
+  → Legend below chart with color swatches and labels
+  → Cutout: 65% (ring style, not full pie)
+
+CHART 2 — "Monthly Cost Trend" (Bar Chart):
+  → Chart.js vertical bar chart, grouped by Month column
+  → X-axis: all 12 months Jan–Dec, Y-axis: cost in $K format
+  → Bars filled with #00ff88 accent, hover state darker shade
+  → Grid lines: subtle, dark (#1e1e1e). Tooltip: month + exact amount
+
+CHART 3 — "Monthly Breakdown by Service" (Stacked Area Chart):
+  → Chart.js line chart with fill: true and stacked: true configuration
+  → 5 datasets, one per service type, each a different color with opacity 0.6
+  → X-axis: months, Y-axis: cumulative cost per month
+  → Shows distribution of service costs stacked over time
+  → Full-width layout, smooth curve tension: 0.4
+
+COST CALCULATOR WIDGET — requirements:
+  → Dropdown: "Service Type" — options: Compute, Storage, Networking,
+      Database, AI/ML Services
+  → Input field: "Usage Hours" — numeric, default value 100
+  → Auto-calculate: derive average cost-per-hour for selected service type
+      from the dataset, then multiply by entered hours
+  → Display: "Rate: $X.XX/hr" (derived from data) and "Estimated Cost: $XXX.XX"
+  → Live update — no submit button needed, calculates on input change
+  → Estimated cost displayed large in #00ff88 accent color
+
+BILLING RECORDS TABLE — requirements:
+  → Full sortable data table showing all 60 records
+  → Columns: Invoice | Month | Service | Department | Hours | Cost
+  → Invoice IDs styled as green monospace badges (INV-001 format)
+  → Department names styled as colored text (each dept unique color)
+  → Cost column right-aligned, formatted as $X,XXX
+  → Table updates in real-time when service filter tab is changed
+  → Row hover: subtle background highlight #1a1a1a
+  → Header row sticky with dark background
+
+DEFAULT DATASET — generate 60 records:
+  → Months: Jan through Dec (5 records per month)
+  → Services: Compute, Storage, Networking, Database, AI/ML Services
+  → Departments: Traffic Management, Public Safety, Smart Lighting,
+      Waste Management, Water Supply
+  → Hours range: 90–900 per invoice. Cost range: $75–$5,640 per invoice
+  → Total cost must sum to approximately $41,623 across all records
+  → Realistic variance: AI/ML costs highest, Storage lowest per hour
+
+PERFORMANCE & QUALITY REQUIREMENTS:
+  → Single HTML file, zero external dependencies except CDN scripts
+  → All charts must re-render correctly after CSV upload without errors
+  → No page reload required for any user interaction
+  → Fully responsive: works on desktop (1440px) and tablet (768px)
+  → Console must be error-free on load and interaction
+    
+02 · Features Built
+Every Component Delivered by the Prompt
+📊
+Donut Chart — Cost by Service
+Interactive Chart.js doughnut with 5 service segments, hover tooltips, and live color legend
+📈
+Bar Chart — Monthly Trend
+12-month vertical bar chart with $K formatted Y-axis and animated hover states
+🌊
+Stacked Area Chart
+Multi-layer area chart showing 5 service types stacked over 12 months with smooth curves
+🧮
+Live Cost Calculator
+Selects service type, derives real $/hr rate from dataset, estimates cost as you type
+📁
+CSV Upload & Parse
+PapaParse-powered file reader that re-renders all charts and tables from custom data instantly
+🔍
+Service Filter Tabs
+5 filter tabs that slice all dashboard data simultaneously — charts, KPIs, and table
+📋
+Billing Records Table
+60-row sortable table with badge-styled invoice IDs and color-coded department names
+💡
+KPI Summary Cards
+4 live metric cards: Total Cost, Usage Hours, Avg per Invoice, Top Department
+03 · Technology Tags
+Stack & Tools Referenced in Prompt
+HTML5
+CSS3 Grid
+Vanilla JavaScript
+Chart.js
+PapaParse
+Netlify Deploy
+CSV Data Analysis
+Pandas-equivalent logic
+GroupBy Aggregation
+Real-time DOM Updates
+Dark UI Design System
+Smart City Context
+Cloud Billing Analytics
+DevOps Workflow
+Responsive Design
